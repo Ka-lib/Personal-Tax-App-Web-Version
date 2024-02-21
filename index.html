@@ -16,28 +16,100 @@
 			<div class="body">
 				<div class="num-box-and-label-container">
 					<label for=""> Income so far this year: $ </label>
-					<input type="number" id="myInput" size="1" />
+					<input type="number" id="income-box" size="1" />
 				</div>
 
 				<p>Taxes Due This Year</p>
 
+				<!-- Reg tax box -->
+				<div class="num-box-and-label-container">
+					<label for=""> Regular Tax </label>
+					<input type="number" id="reg-box" size="1" disabled />
+				</div>
+
+				<!-- Self Emp Tax Box -->
+				<div class="num-box-and-label-container">
+					<label for=""> Self Employment Tax </label>
+					<input type="number" id="self-emp-box" size="1" disabled />
+				</div>
+
+				<!-- Reminder: make label saying "= Fed ES Tax" -->
+
+				<!-- Total Fed Tax Box -->
 				<div class="num-box-and-label-container">
 					<label for=""> Total Fed ES Tax </label>
-					<input type="number" id="" size="1" disabled />
+					<input type="number" id="fed-box" size="1" disabled />
+				</div>
+
+				<div class="num-box-and-label-container">
+					<label for=""> 90% Fed ES Tax </label>
+					<input type="number" id="fed-90%-box" size="1" disabled />
+				</div>
+
+				<!-- Total State Tax Box -->
+				<div class="num-box-and-label-container">
+					<label for=""> Total State ES Tax </label>
+					<input type="number" id="state-box" size="1" disabled />
+				</div>
+
+				<div class="num-box-and-label-container">
+					<label for=""> 90% State ES Tax </label>
+					<input type="number" id="state-90%-box" size="1" disabled />
 				</div>
 
 				<p>Amount already paid this year</p>
 
+				<!-- Amount Paid Section -->
 				<div class="num-box-and-label-container">
-					<label for=""> $ </label>
-					<input type="number" id="" size="1" />
+					<label for=""> $FED </label>
+					<input type="number" id="paid-fed-box" size="1" />
 				</div>
+
+				<div class="num-box-and-label-container">
+					<label for=""> $STATE </label>
+					<input type="number" id="paid-state-box" size="1" />
+				</div>
+
+				<!-- Remainder Section -->
 
 				<p>Amount left to pay this year</p>
 
+				<!-- fed remainders -->
 				<div class="num-box-and-label-container">
 					<label for=""> Remaining Fed Tax </label>
-					<input type="number" id="" size="1" disabled />
+					<input
+						type="number"
+						id="remainder-fed-box"
+						size="1"
+						disabled />
+				</div>
+
+				<div class="num-box-and-label-container">
+					<label for=""> 90% Fed Tax </label>
+					<input
+						type="number"
+						id="remainder-fed-90%-box"
+						size="1"
+						disabled />
+				</div>
+
+				<!-- state remanders -->
+				<div class="num-box-and-label-container">
+					<label for=""> Remaining State Tax </label>
+					<input
+						type="number"
+						id="remainder-state-box"
+						size="1"
+						disabled />
+				</div>
+
+				<div class="num-box-and-label-container">
+					<label for=""> 90% State Tax </label>
+					<input
+						type="number"
+						id="remainder-state-90%-box"
+						size="1"
+						disabled />
 				</div>
 			</div>
 		</div>

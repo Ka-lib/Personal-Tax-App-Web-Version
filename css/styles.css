@@ -1,4 +1,4 @@
-/* mobile first approach, then modify for wider screens */
+/* mobile first approach, then modify for wider screens! */
 
 body {
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -12,11 +12,6 @@ body {
 
 	white-space: nowrap;
 }
-
-/* input {
-	max-width: 100%;
-	min-width: 1%;
-} */
 
 .main-window {
 	background-color: whitesmoke;
@@ -48,3 +43,5 @@ body {
 	flex-grow: 1;
 	min-width: none;
 } */
+
+/* Rememeber to do media query to adjust format for wider screens */
