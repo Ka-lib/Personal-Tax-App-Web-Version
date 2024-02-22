@@ -11,7 +11,9 @@
 	<body>
 		<div class="main-window">
 			<!-- header bar? -->
-			<div class="header">Estimated Tax App for (2021)</div>
+			<div class="header">
+				<h1>Estimated Tax App for (2021)</h1>
+			</div>
 
 			<div class="body">
 				<div class="input-container input-container-num">
@@ -19,34 +21,34 @@
 					<input type="text" id="income-box" size="1" />
 				</div>
 
-				<p>Taxes Due This Year</p>
+				<h2>Taxes Due This Year</h2>
+
+				<!-- FED TAX BREAKDOWN SECTION -->
+				<div class="fed-total-breakdown-container little-hover">
+					<!-- Reg tax box -->
+					<div class="input-container">
+						<label for=""> Regular Tax </label>
+						<input type="text" id="reg-box" size="1" disabled />
+					</div>
+
+					<h3>+</h3>
+
+					<!-- Self Emp Tax Box -->
+					<div class="input-container">
+						<label for=""> Self Employment Tax </label>
+						<input
+							type="text"
+							id="self-emp-box"
+							size="1"
+							disabled />
+					</div>
+
+					<!-- Reminder: make label saying "= Fed ES Tax" -->
+					<h3>= Fed Tax</h3>
+				</div>
 
 				<div class="totals-container">
 					<div class="fed-totals-container">
-						<div class="fed-total-breakdown-container">
-							<!-- Reg tax box -->
-							<div class="input-container">
-								<label for=""> Regular Tax </label>
-								<input
-									type="text"
-									id="reg-box"
-									size="1"
-									disabled />
-							</div>
-
-							<!-- Self Emp Tax Box -->
-							<div class="input-container">
-								<label for=""> Self Employment Tax </label>
-								<input
-									type="text"
-									id="self-emp-box"
-									size="1"
-									disabled />
-							</div>
-
-							<!-- Reminder: make label saying "= Fed ES Tax" -->
-						</div>
-
 						<!-- Total Fed Tax Box -->
 						<div class="input-container">
 							<label for=""> Total Fed ES Tax </label>
@@ -86,7 +88,7 @@
 				</div>
 
 				<!-- Amount Paid Section -->
-				<p>Amount already paid this year</p>
+				<h2>Amount already paid this year</h2>
 
 				<div class="remainders-container">
 					<div class="fed-remainders-container">

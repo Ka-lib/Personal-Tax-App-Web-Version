@@ -156,6 +156,10 @@ function calcOregonEstTax(income) {
 	}
 	// Oregon tax minus exemptions (amount of ppl you responsible for)
 	oregonTax = oregonTax - 213 * 1;
+	// zero out negative values
+	if (oregonTax < 0) {
+		oregonTax = 0;
+	}
 
 	oregonTax = oregonTax.toFixed(2);
 	let oregonTaxMin = (oregonTax * 0.9).toFixed(2);
