@@ -16,19 +16,36 @@ let remainderFed90Box = document.getElementById("remainder-fed-90%-box");
 let remainderStateBox = document.getElementById("remainder-state-box");
 let remainderState90Box = document.getElementById("remainder-state-90%-box");
 
+// input filters
+setInputFilter(incomeBox, function (value) {
+	return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp.
+});
+setInputFilter(paidFedBox, function (value) {
+	return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp.
+});
+setInputFilter(paidStateBox, function (value) {
+	return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp.
+});
+
+// currency formatter
+const currencyFormater = new Intl.NumberFormat("en-US", {
+	style: "currency",
+	currency: "USD",
+});
+
 // If Income box edited...
 incomeBox.addEventListener("input", function (event) {
 	let income = incomeBox.value;
 	let fedValues = calcFedEstTax(income);
 	let stateValues = calcOregonEstTax(income);
 
-	regBox.value = fedValues[3];
-	selfEmpBox.value = fedValues[4];
-	fedBox.value = fedValues[0];
-	fed90Box.value = fedValues[1];
+	regBox.value = currencyFormater.format(fedValues[3]);
+	selfEmpBox.value = currencyFormater.format(fedValues[4]);
+	fedBox.value = currencyFormater.format(fedValues[0]);
+	fed90Box.value = currencyFormater.format(fedValues[1]);
 
-	stateBox.value = stateValues[0];
-	state90Box.value = stateValues[1];
+	stateBox.value = currencyFormater.format(stateValues[0]);
+	state90Box.value = currencyFormater.format(stateValues[1]);
 
 	paidFedBoxEdited();
 	paidStateBoxEdited();
@@ -49,8 +66,8 @@ function paidFedBoxEdited() {
 	// get ES Tax paid so far this year
 	let paidFed = paidFedBox.value;
 
-	remainderFedBox.value = (fedValues[0] - paidFed).toFixed(2);
-	remainderFed90Box.value = (fedValues[1] - paidFed).toFixed(2);
+	remainderFedBox.value = currencyFormater.format(fedValues[0] - paidFed);
+	remainderFed90Box.value = currencyFormater.format(fedValues[1] - paidFed);
 }
 
 function paidStateBoxEdited() {
@@ -58,8 +75,12 @@ function paidStateBoxEdited() {
 	// get ES Tax paid so far this year
 	let paidState = paidStateBox.value;
 
-	remainderStateBox.value = (stateValues[0] - paidState).toFixed(2);
-	remainderState90Box.value = (stateValues[1] - paidState).toFixed(2);
+	remainderStateBox.value = currencyFormater.format(
+		stateValues[0] - paidState,
+	);
+	remainderState90Box.value = currencyFormater.format(
+		stateValues[1] - paidState,
+	);
 }
 
 function calcFedEstTax(income) {
@@ -140,4 +161,54 @@ function calcOregonEstTax(income) {
 	let oregonTaxMin = (oregonTax * 0.9).toFixed(2);
 
 	return [oregonTax, oregonTaxMin];
+}
+
+//STOLEN FROM STACK OVERFLOW
+// https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
+
+/* I did this because html is silly so I can't make number input's 
+default size any smaller which is REALLY annoying. However I can
+make text input default size=1(the smallest). So this is to turn
+text input into num input essentially -_- */
+
+// Restricts input for the given textbox to the given inputFilter function.
+function setInputFilter(textbox, inputFilter, errMsg) {
+	[
+		"input",
+		"keydown",
+		"keyup",
+		"mousedown",
+		"mouseup",
+		"select",
+		"contextmenu",
+		"drop",
+		"focusout",
+	].forEach(function (event) {
+		textbox.addEventListener(event, function (e) {
+			if (inputFilter(this.value)) {
+				// Accepted value.
+				if (["keydown", "mousedown", "focusout"].indexOf(e.type) >= 0) {
+					this.classList.remove("input-error");
+					this.setCustomValidity("");
+				}
+
+				this.oldValue = this.value;
+				this.oldSelectionStart = this.selectionStart;
+				this.oldSelectionEnd = this.selectionEnd;
+			} else if (this.hasOwnProperty("oldValue")) {
+				// Rejected value: restore the previous one.
+				this.classList.add("input-error");
+				this.setCustomValidity(errMsg);
+				this.reportValidity();
+				this.value = this.oldValue;
+				this.setSelectionRange(
+					this.oldSelectionStart,
+					this.oldSelectionEnd,
+				);
+			} else {
+				// Rejected value: nothing to restore.
+				this.value = "";
+			}
+		});
+	});
 }

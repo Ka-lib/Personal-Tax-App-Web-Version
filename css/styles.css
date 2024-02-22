@@ -5,26 +5,24 @@ body {
 		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
 		sans-serif;
 	display: flex;
-	height: 100vh;
-	width: 100vw;
 	justify-content: center;
-	align-items: center;
-
 	white-space: nowrap;
 }
 
 .main-window {
-	background-color: whitesmoke;
-	height: fit-content;
-	width: 75vw;
+	background-color: white;
+	margin: 10px;
+	width: 85vw;
 	box-shadow: 0 0 50px grey;
 	/* round edges */
 	border-radius: 10px;
 	overflow: hidden;
+
+	max-width: 768px;
 }
 
 .header {
-	display: block;
+	/* display: block; */
 	background-color: #42e9f5;
 	padding: 1rem;
 }
@@ -33,15 +31,80 @@ body {
 	padding: 1rem;
 }
 
-.num-box-and-label-container {
+.input-container {
+	display: flex;
+	flex-direction: column;
+	width: 97%;
+	height: 100%;
+	background-color: whitesmoke;
+	border-radius: 100px;
+	margin: 0.5rem;
+	overflow: hidden;
+
+	transition: box-shadow 0.2s ease-out;
+}
+.input-container-num {
+	margin-top: 1.5rem;
+	background-color: white;
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+}
+.input-container label {
+	font-size: x-small;
+	padding-top: 2px;
+	padding-left: 1rem;
+	color: grey;
+}
+.input-container input {
+	border: none;
+	padding: 3px 1rem;
+	outline: none;
+}
+.input-container input::-webkit-inner-spin-button {
+	appearance: none; /*removes the arrows on number input*/
+}
+
+/* style input on hover */
+.input-container:hover {
+	box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ----Top half Positioning---- */
+.totals-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+.fed-totals-container {
+	width: 100%;
+	height: 100%;
+}
+.fed-total-breakdown-container {
+	display: flex;
+}
+.state-totals-container {
+	width: 100%;
+	height: 100%;
+}
+
+/* ----Bottom half Positioning---- */
+.remainders-container {
 	display: flex;
 	flex-direction: column;
 }
+.fed-remainders-container {
+	width: 100%;
+	height: 100%;
+}
+.state-remainders-container {
+	width: 100%;
+	height: 100%;
+}
 
-/* .text-box-with-label-container input[type="text"] {
-	height: fit-content;
-	flex-grow: 1;
-	min-width: none;
-} */
-
-/* Rememeber to do media query to adjust format for wider screens */
+@media screen and (min-width: 525px) {
+	.remainders-container {
+		flex-direction: row;
+	}
+	.totals-container {
+		flex-direction: row;
+	}
+}
