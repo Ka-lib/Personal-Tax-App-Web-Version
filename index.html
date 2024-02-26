@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="images/favicon-16x16.png" />
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<!-- Style sheets -->
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link rel="stylesheet" href="css/styles.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+			rel="stylesheet" />
 	</head>
 	<body>
 		<div class="main-window">
 			<!-- header bar? -->
 			<div class="header">
-				<h1>Estimated Tax App for (2021)</h1>
+				<h1>
+					Estimated
+					<img class="tax-icon" src="images/tax.png" alt="tax icon" />
+					App
+				</h1>
+				<h2>for (2021)</h2>
 			</div>
 
 			<div class="body">
+				<h2>Total Income This Year</h2>
+
 				<div class="input-container input-container-num">
 					<label for="income-box"> Income so far this year: $ </label>
 					<input type="text" id="income-box" size="1" />
@@ -88,7 +107,7 @@
 				</div>
 
 				<!-- Amount Paid Section -->
-				<h2>Amount already paid this year</h2>
+				<h2>Already Paid This Year</h2>
 
 				<div class="remainders-container">
 					<div class="fed-remainders-container">

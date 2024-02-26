@@ -1,10 +1,10 @@
 /* mobile first approach, then modify for wider screens! */
 :root {
-	--color-primary: #84e3a0;
+	--color-primary: #8dcc13;
 	--color-secondary: white;
 	--color-accent: whitesmoke;
 	--color-text: grey;
-	/* --color-heading */
+	--color-heading: black;
 }
 
 body {
@@ -16,15 +16,21 @@ body {
 	white-space: nowrap;
 }
 
+h1,
+h2,
 h3 {
-	/* rememeber to change the size */
+	font-family: "Indie Flower", cursive;
+	font-weight: 400;
+	font-style: normal;
+	margin: 0;
 	color: var(--color-text);
+	text-align: center;
 }
 
 .main-window {
 	background-color: white;
 	margin: 10px;
-	width: 85vw;
+	width: 97vw;
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
 	/* round edges */
 	border-radius: 10px;
@@ -34,13 +40,41 @@ h3 {
 }
 
 .header {
-	/* display: block; */
-	background-color: var(--color-primary);
+	background: rgb(141, 204, 19);
+	background: radial-gradient(
+		circle,
+		rgba(141, 204, 19, 1) 40%,
+		rgba(253, 187, 45, 1) 100%
+	);
 	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.header h1,
+.header h2 {
+	color: var(--color-heading);
+}
+.header h2 {
+	margin: 0;
+}
+.tax-icon {
+	width: 40px;
+	position: relative;
+	top: 10px;
 }
 
 .body {
 	padding: 1rem;
+}
+.body h2 {
+	margin-top: 1rem;
+}
+
+@media screen and (min-width: 525px) {
+	.main-window {
+		width: 85vw;
+	}
 }
 
 /* INPUT CONTAINER Styles */
