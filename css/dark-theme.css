@@ -12,8 +12,42 @@ body {
 	background-color: rgba(27, 36, 49, 0.8);
 }
 
-/* toggle button */
+.header {
+	box-shadow: 0 0 3px 3px black;
+}
+
+/* THEME toggle button */
 .btn-theme-toggle::after {
-	content: "\f186"; /* moon */
-	font-family: FontAwesome;
+	font-family: "Material Symbols Outlined";
+	content: "\f174";
+}
+.btn-theme-toggle:hover {
+	box-shadow: 0 0 0 1px whitesmoke;
+}
+
+/* OTHER */
+.input-container-num {
+	box-shadow: 3px 3px 0 grey;
+}
+
+/* HOVER STYLES */
+* {
+	transition: box-shadow 0.2s ease-out;
+}
+.input-container:hover {
+	/* !!!! COME BACK TO THIS!!! Just using this to test stuff for now */
+	box-shadow: 3px 3px 0 grey;
+}
+.input-container-num:hover {
+	box-shadow: 3px 3px 0 2px grey;
+}
+.big-hover:hover {
+	box-shadow: 3px 3px 0 2px grey;
+}
+.little-hover:hover {
+	box-shadow: 3px 3px 0 grey;
+}
+
+.fed-total-breakdown-container .input-container:hover {
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
