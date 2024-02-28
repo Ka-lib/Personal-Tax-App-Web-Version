@@ -1,0 +1,19 @@
+/* Dark Theme */
+:root {
+	--color-primary: #202428;
+	--color-secondary: #1b2431;
+	--color-accent: lightgrey;
+	--color-text: black;
+	--color-heading: white;
+	--color-heading-body: white;
+}
+
+body {
+	background-color: rgba(27, 36, 49, 0.8);
+}
+
+/* toggle button */
+.btn-theme-toggle::after {
+	content: "\f186"; /* moon */
+	font-family: FontAwesome;
+}
