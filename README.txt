@@ -1,3 +1,8 @@
+[Description]
+Calculates my estimated taxes while in oregon 2021 tax rules
+
+
+[Note to self]
 How to run this?
 
 1) Download the repo. Drag & drop folder into VSCode.

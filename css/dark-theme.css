@@ -1,6 +1,13 @@
 /* Dark Theme */
 :root {
-	--color-primary: #202428;
+	/* --color-primary: #202428; */
+	--color-primary: radial-gradient(
+		circle,
+		#bababe 0%,
+		#242535 45%,
+		#202428 60%,
+		black 100%
+	);
 	--color-secondary: #1b2431;
 	--color-accent: lightgrey;
 	--color-text: black;
@@ -9,7 +16,7 @@
 }
 
 body {
-	background-color: rgba(27, 36, 49, 0.8);
+	background-color: rgba(35, 48, 67, 0.8);
 }
 
 .header {
