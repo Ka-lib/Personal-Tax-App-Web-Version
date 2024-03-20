@@ -16,7 +16,11 @@
 }
 
 body {
-	background-color: rgba(35, 48, 67, 0.8);
+	background-color: rgba(35, 48, 67, 0.9);
+}
+
+.main-window {
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 }
 
 .header {

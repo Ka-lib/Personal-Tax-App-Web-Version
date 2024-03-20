@@ -22,6 +22,8 @@ body {
 	display: flex;
 	justify-content: center;
 	white-space: nowrap;
+
+	background-color: whitesmoke;
 }
 
 h1,
